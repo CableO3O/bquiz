@@ -37,8 +37,6 @@
 			<?php
 			$do = $_GET['do']??'main';
 			$file = "./front/{$do}.php";
-			// (in_array($do,$array))?include "./front/$do.php":include "./front/main.php";
-			
 			if (file_exists($file)) {
 				include $file;
 			} else {
