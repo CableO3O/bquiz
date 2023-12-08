@@ -6,7 +6,7 @@
                 <tr class="yel" style="width: 50%;">
                     <td width="50%">進佔總人數:</td>
                     <td width="50%"><input type="number" name="total" value="<?=$Total->find(1)['total'];?>"></td>
-                    <td width="50%"><input type="hidden" name="table" value="total"></td>
+                    <td width="50%"><input type="hidden" name="table" value="<?=$do;?>"></td>
 
                 </tr>
             </tbody>
