@@ -8,6 +8,7 @@ if(isset($_FILES['img']['tmp_name'])){
     $_POST['img']=$_FILES['img']['name'];
 }
 // 因為資料表內沒有table的欄位，所以save前要先將他刪掉才不會讓資料表跑掉
+$_POST['sh']=($table=='title')?0:1;
 unset($_POST['table']);
 $DB->save($_POST);
 
