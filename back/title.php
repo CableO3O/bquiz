@@ -13,7 +13,6 @@
                 <?php
                 $rows=$Title->all();
                 foreach($rows as $row){
-
                     ?>
                 <tr>
                     <td width="45%">
@@ -34,7 +33,6 @@
                 </tr>
                 <?php
                     }
-
                 ?>
             </tbody>
         </table>
