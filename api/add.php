@@ -7,6 +7,7 @@ if(isset($_FILES['img']['tmp_name'])){
     move_uploaded_file($_FILES['img']['tmp_name'],"../img".$_FILES['img']['name']);
     $_POST['img']=$_FILES['img']['name'];
 }
+// 因為資料表內沒有table的欄位，所以save前要先將他刪掉才不會讓資料表跑掉
 unset($_POST['table']);
 $DB->save($_POST);
 
