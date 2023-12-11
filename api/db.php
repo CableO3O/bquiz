@@ -160,7 +160,7 @@ $Admin=new DB('admin');
 if (isset($_GET['do'])) {
     $DB=${ucfirst($_GET['do'])};
 }else{
-    $DB=$title;
+    $DB=$Title;
 }
 
 ?>
