@@ -16,7 +16,7 @@ foreach ($_POST['id'] as $key => $id) {
     } else {
         $row = $DB->find($id);
         if (isset($row['text'])) {
-            // 將$_POST['text']以[$key]替代
+            // 將 $_POST['text'] 中的值替換為對應的 $key
             $row['text'] = $_POST['text'][$key];
         }
         switch ($table) {
