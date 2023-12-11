@@ -158,6 +158,8 @@ $News=new DB('news');
 
 if (isset($_GET['do'])) {
     $DB=${ucfirst($_GET['do'])};
+}else{
+    $DB=$title;
 }
 
 ?>
