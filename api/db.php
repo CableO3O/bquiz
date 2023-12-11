@@ -154,4 +154,9 @@ $Total=new DB('total');
 $Bottom=new DB('bottom');
 $Mvim=new DB('mvim');
 $Image=new DB('image');
+
+if (isset($_GET['do'])) {
+    $DB=${ucfirst($_GET['do'])};
+}
+
 ?>
