@@ -153,4 +153,5 @@ $Ad=new DB('ad');
 $Total=new DB('total');
 $Bottom=new DB('bottom');
 $Mvim=new DB('mvim');
+$Image=new DB('image');
 ?>
