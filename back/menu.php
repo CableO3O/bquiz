@@ -13,9 +13,9 @@
                 </tr>
                 <?php
 
-                $rows = $DB->all();
+                $rows = $DB->all(['menu_id'=>0]);
                 foreach ($rows as $row) {
-                ?>
+                    ?>
                     <tr>
                         <td>
                             <input type="text" name="text[]" value="<?= $row['text']; ?>">
@@ -23,7 +23,12 @@
                         <td>
                             <input type="text" name="href[]" value="<?= $row['href']; ?>">
                         </td>
-                        <td></td>
+                        <td>
+                            <?php
+                                $counts = $DB->count(['menu_id'=>$row['id']]);
+                                echo $counts;
+                            ?>
+                        </td>
                         <td>
                             <input type="checkbox" name="sh[]" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>>
                         </td>
