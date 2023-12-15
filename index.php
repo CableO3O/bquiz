@@ -1,4 +1,4 @@
-<?php include_once "./api/db.php";?>
+<?php include_once "./api/db.php"; ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0040)http://127.0.0.1/test/exercise/collage/? -->
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -20,11 +20,11 @@
 		</div>
 	</div>
 	<div id="main">
-			<?php
-			$title=$Title->find(['sh'=>1]);
-			?>
-		<a title="<?=$title['text'];?>" href="index.php">
-			<div class="ti" style="background:url(&#39;./img/<?=$title['img'];?>&#39;); text-align:center; background-size:cover;">
+		<?php
+		$title = $Title->find(['sh' => 1]);
+		?>
+		<a title="<?= $title['text']; ?>" href="index.php">
+			<div class="ti" style="background:url(&#39;./img/<?= $title['img']; ?>&#39;); text-align:center; background-size:cover;">
 			</div><!--標題-->
 		</a>
 		<div id="ms">
@@ -33,18 +33,18 @@
 					<!--主選單放此-->
 					<span class="t botli">主選單區</span>
 					<?php
-    $menus=$Menu->all(['sh'=>1,'menu_id'=>0]);
-    foreach ($menus as $menus) {
-        echo $menus['text'];
-    }
-    ?>
+					$menus = $Menu->all(['sh' => 1, 'menu_id' => 0]);
+					foreach ($menus as $menus) {
+						echo $menus['text'];
+					}
+					?>
 				</div>
 				<div class="dbor" style="margin:3px; width:95%; height:20%; line-height:100px;">
-					<span class="t">進站總人數 :<?=$Total->find(1)['total'];?></span>
+					<span class="t">進站總人數 :<?= $Total->find(1)['total']; ?></span>
 				</div>
 			</div>
 			<?php
-			$do = $_GET['do']??'main';
+			$do = $_GET['do'] ?? 'main';
 			$file = "./front/{$do}.php";
 			if (file_exists($file)) {
 				include $file;
@@ -113,7 +113,7 @@
 		</div>
 		<div style="clear:both;"></div>
 		<div style="width:1024px; left:0px; position:relative; background:#FC3; margin-top:4px; height:123px; display:block;">
-			<span class="t" style="line-height:123px;"><?=$Bottom->find(1)['bottom'];?></span>
+			<span class="t" style="line-height:123px;"><?= $Bottom->find(1)['bottom']; ?></span>
 		</div>
 	</div>
 
