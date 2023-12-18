@@ -29,16 +29,38 @@
 		</a>
 		<div id="ms">
 			<div id="lf" style="float:left;">
-				<div id="menuput" class="dbor">
-					<!--主選單放此-->
-					<span class="t botli">主選單區</span>
-					<?php
-					$menus = $Menu->all(['sh' => 1, 'menu_id' => 0]);
-					foreach ($menus as $menus) {
-						echo $menus['text'];
-					}
-					?>
-				</div>
+			<div id="menuput" class="dbor">
+                    <!--主選單放此-->
+						<span class="t botli">主選單區</span>
+						<?php
+						$mainmu=$Menu->all(['sh'=>1,'menu_id'=>0]);
+						foreach($mainmu as $main){
+						?>
+						<div class='mainmu'>
+							<a  href="<?=$main['href'];?>" style="color:#000; font-size:13px; text-decoration:none;"><?=$main['text'];?></a>
+							<?php
+							
+							if($Menu->count(['menu_id'=>$main['id']])>0){
+								echo "<div class='mw'>";
+								$subs=$Menu->all(['menu_id'=>$main['id']]);
+								foreach($subs as $sub){
+									echo "<a href='{$sub['href']}'>";
+									echo "<div class='mainmu2'>";
+									echo $sub['text'];
+									echo "</div>";
+									echo "</a>";
+								}
+								echo "</div>";
+							}
+							?>
+							
+						</div>
+							
+						</a>
+						<?php
+						}
+						?>
+					</div>
 				<div class="dbor" style="margin:3px; width:95%; height:20%; line-height:100px;">
 					<span class="t">進站總人數 :<?= $Total->find(1)['total']; ?></span>
 				</div>
@@ -77,13 +99,13 @@
 					<div class="cent" onclick="pp(1)"><img src="./icon/up.jpg" alt=""></div>
 					<?php
 					$imgs = $Image->all(['sh' => 1]);
-					
+
 					foreach ($imgs as $idx => $img) {
-						?>
+					?>
 						<div id="ssaa<?= $idx; ?>" class="im cent">
 							<img src="./img/<?= $img['img']; ?>" style="width: 150px;height:103px;border:3px solid black;margin:3px">
 						</div>
-						<?php
+					<?php
 					}
 					?>
 					<div class="cent" onclick="pp(2)"><img src="./icon/dn.jpg" alt=""></div>
