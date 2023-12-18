@@ -157,6 +157,7 @@ $Image=new DB('image');
 $News=new DB('news');
 $Admin=new DB('admin');
 $Menu=new DB('menu');
+$Checkacc=new DB('checkacc');
 // 將程式內設定的變數以陣列顯示
 $tables=array_keys(get_defined_vars());
 if(isset($_GET['do'])){
