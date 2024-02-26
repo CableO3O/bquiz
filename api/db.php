@@ -139,7 +139,7 @@ class DB{
     // 檢查及處理所有參數
     function check($arg) {
         $arg=htmlspecialchars($arg);
-        return;
+        return $arg;
     }
 
 }
