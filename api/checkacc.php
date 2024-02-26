@@ -1,7 +1,8 @@
 <?php
 include_once "db.php";
-$acc=$_POST['acc'];
-$pw=$_POST['pw'];
+// 過濾表單資料
+$acc=htmlspecialchars($_POST['acc']);
+$pw=htmlspecialchars($_POST['pw']);
 
 $checkacc=$Checkacc->count(['acc'=>$acc,'pw'=>$pw]);
 
