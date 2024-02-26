@@ -108,6 +108,7 @@ class DB{
 
     private function a2s($array){
         foreach ($array as $col => $value) {
+            $value=$this->check($value);
             $tmp[] = "`$col`='$value'";
         }
         return $tmp;
@@ -134,6 +135,11 @@ class DB{
         } else {
             echo "錯誤:沒有指定的資料表名稱";
         }
+    }
+    // 檢查及處理所有參數
+    function check($arg) {
+        $arg=htmlspecialchars($arg);
+        return;
     }
 
 }
